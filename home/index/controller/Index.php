@@ -20,4 +20,12 @@ class Index extends Common
         ]);
         return $this->fetch();
     }
+
+    public function upload()
+    {
+        $this->assign([
+            'title' => 'DocShare - 上传文件'
+        ]);
+        return $this->fetch();
+    }
 }

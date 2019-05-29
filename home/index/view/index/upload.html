@@ -1,0 +1,82 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+	{include file="../public/static/home/head.html" title="$title" /}
+</head>
+
+<body>
+	<!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+	<!-- Add your site or application content here -->
+
+	<!-- Wrapper -->
+	<div id="wrapper" class="wrapper">
+		{include file="../public/static/home/header.html" /}
+
+		<!-- Page Conttent -->
+		<main class="page-content">
+
+            <!-- Contact Area -->
+            <div class="contact-us-area section-padding-md">
+
+				<!-- Contact Us Info -->
+				<div class="container">
+					<div class="">
+						
+						<div class="">
+							<div class="commentbox">
+								<h5>上传文件</h5>
+								<form id="contact-form" action="mail.php" method="POST" class="sn-form contact-form">
+									<div class="sn-form-inner">
+										<div class="single-input">
+											<label for="new-review-subject">标题</label>
+											<input type="text" name="title" id="title">
+										</div>
+										<div class="single-input">
+											<label for="new-review-name">简介</label>
+											<textarea id="brief" name="brief" cols="30" rows="2"></textarea>
+										</div>
+										<!-- <div class="single-input single-input-half">
+											<label for="new-review-email">Email*</label>
+											<input type="email" name="email" id="new-review-email">
+										</div> -->
+										<div class="single-input">
+											<label for="new-review-textbox">详情</label>
+											<textarea id="new-review-textbox" name="detail" cols="30" rows="5"></textarea>
+										</div>
+										<div class="single-input">
+											<button class="sn-button sn-button-dark" type="submit"><span>Send</span></button>
+										</div>
+									</div>
+								</form>
+								<p class="form-message"></p>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<!--// Contact Us Info -->
+
+            </div>
+            <!--// Contact Area -->
+
+		</main>
+		<!--// Page Conttent -->
+
+		<!-- Footer Area -->
+		{include file="../public/static/home/footer.html" /}
+        <!--// Footer Area -->
+
+
+	</div>
+	<!--// Wrapper -->
+
+	<script type="text/javascript" src="/static/admin/lib/ueditor/1.4.3/ueditor.config.js"></script>
+	<script type="text/javascript" src="/static/admin/lib/ueditor/1.4.3/ueditor.all.min.js"> </script>
+	<script type="text/javascript" src="/static/admin/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
+</body>
+
+</html>
