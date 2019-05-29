@@ -9,7 +9,7 @@ class Users extends Common
     public function login()
     {
         $this->assign([
-            'title' => '鲜多多 - 登录'
+            'title' => 'DocShare - 登录'
         ]);
         return $this->fetch();
     }
