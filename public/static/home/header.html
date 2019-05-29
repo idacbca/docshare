@@ -21,8 +21,6 @@
                     <div class="col-lg-6 col-md-6 col-12">
                         <ul class="header-top-right">
                             <li><a href="{:url('index/users/my_account')}">我的主页</a></li>
-                            <li><a href="{:url('index/goods/cart')}">购物车</a></li>
-                            <li><a href="{:url('index/checkout/checkout')}">结算</a></li>
                             <li><a href="{:url('index/users/logout')}">注销</a></li>
                         </ul>
                     </div>
@@ -31,7 +29,6 @@
                         <ul class="header-top-right">
                             <li><a href="{:url('index/users/login')}">登录</a></li>
                             <li><a href="{:url('index/users/register')}">注册</a></li>
-                            <li><a href="{:url('index/goods/cart')}">购物车</a></li>
                         </ul>
                     </div>
                     {/if}
@@ -46,12 +43,6 @@
                 <div class="row align-items-center">
                     <div class="col-lg-4 col-12">
                         <form action="{:url('index/goods/searchGoods')}" class="header-search" method="post">
-                            <select name="header-search-categories">
-                                <option value="0">全部种类</option>
-                                {foreach $type as $data}
-                                <option value="{$data['level']}">{$data['name']}</option>
-                                {/foreach}
-                            </select>
                             <input type="text" name="goodsname" placeholder="请输入商品名">
                             <button type="submit" ><i class="fa fa-search"></i></button>
                         </form>
@@ -64,62 +55,7 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-5 col-12">
-                        <div class="header-cart-wrap">
-                            {if condition="session('?cid')"}
-                            <div class="header-cart">
-                                <a href="{:url('index/goods/cart')}" class="header-cart-button"><i class="fa fa-shopping-cart"></i> 购物车 (0)</a>
-                                <div class="minicart">
-                                    <ul class="minicart-product-list">
-                                        <li>
-                                            <a href="product-details-right-sidebar.html" class="minicart-product-image">
-                                                <img src="/static/home/img/product/small-size/product-image-1.jpg" alt="cart products">
-                                                <span class="quantity">1</span>
-                                            </a>
-                                            <div class="minicart-product-details">
-                                                <h6><a href="product-details-right-sidebar.html">Aenean eu tristique</a></h6>
-                                                <span>£80</span>
-                                            </div>
-                                            <button class="close">
-                                                <i class="fa fa-times-circle"></i>
-                                            </button>
-                                        </li>
-                                        <li>
-                                            <a href="product-details-right-sidebar.html" class="minicart-product-image">
-                                                <img src="/static/home/img/product/small-size/product-image-2.jpg" alt="cart products">
-                                                <span class="quantity">1</span>
-                                            </a>
-                                            <div class="minicart-product-details">
-                                                <h6><a href="product-details-right-sidebar.html">Aenean sagittis</a></h6>
-                                                <span>£80</span>
-                                            </div>
-                                            <button class="close">
-                                                <i class="fa fa-times-circle"></i>
-                                            </button>
-                                        </li>
-                                        <li>
-                                            <a href="product-details-right-sidebar.html" class="minicart-product-image">
-                                                <img src="/static/home/img/product/small-size/product-image-3.jpg" alt="cart products">
-                                                <span class="quantity">1</span>
-                                            </a>
-                                            <div class="minicart-product-details">
-                                                <h6><a href="product-details-right-sidebar.html">Aliquam lobortis est</a></h6>
-                                                <span>£80</span>
-                                            </div>
-                                            <button class="close">
-                                                <i class="fa fa-times-circle"></i>
-                                            </button>
-                                        </li>
-                                    </ul>
-                                    <p class="minicart-total">SUBTOTAL: <span>£315.00</span></p>
-                                    <div class="minicart-button">
-                                        <a href="checkout.html" class="sn-button-dark sn-button-fullwidth">
-                                            <span>Checkout</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            {/if}
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -133,30 +69,7 @@
                     <nav class="sn-navigation">
                         <ul>
 							<li><a href="{:url('index/index/index')}">主页</a></li>
-							<li><a href="{:url('index/goods/shop_left_sidebar')}">商品分类</a>
-								<ul>
-                                   {foreach $type as $data}
-                                   
-                                    <li><a href="{:url('index/goods/shop_left_sidebar', ['id'=>$data.id])}">{$data['name']}</a>
-										<ul>
-                                            {foreach $data['chlid'] as $data2}
-                                            <li><a href="{:url('index/goods/shop_left_sidebar', ['id'=>$data2.id])}">{$data2['name']}</a>
-                                            <ul>
-                                                {foreach $data2['chlid2'] as $data3}
-                                                <!-- if($data3['id']){ -->
-                                                    <li><a href="{:url('index/goods/shop_left_sidebar', ['id'=>$data3.id])}">{$data3['name']}</a></li>
-                                                <!-- } -->
-                                                {/foreach}
-                                            </ul>
-                                            </li>
-											{/foreach}
-										</ul>
-									</li>	
-                                    {/foreach}
-                                </ul>
-                                
-                            </li>
-                            
+
 						</ul>
                     </nav>
                 </div>
