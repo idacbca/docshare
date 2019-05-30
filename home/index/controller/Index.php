@@ -28,12 +28,6 @@ class Index extends Common
         return $this->fetch();
     }
 
-<<<<<<< HEAD
-    
-
-    
-    
-=======
     public function blog_details()
     {
         if(input('id')){
@@ -57,5 +51,4 @@ class Index extends Common
             return $this->fetch();
       }
   }
->>>>>>> 2814dabc15e97438c10e8ac165d7cc12177ef4f1
 }
