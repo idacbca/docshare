@@ -35,19 +35,9 @@
 							</blockquote>
 							<p>资料数量：{$value.quantity}</p>
 							<p>资料价格：{$value.unitprice}</p>
+							<p><div><button class="sn-readmore"><a href = "{:url('download',['filepath'=>$value.filepath])}">下载</a></button></div></p>
 							<p>***</p>
-						</div>
-						<div class="blog-item-share">
-							<h6>Share This Post: </h6>
-							<div class="social-icons">
-								<ul>
-									<li class="facebook"><a href="#" data-toggle="tooltip" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-									<li class="twitter"><a href="#" data-toggle="tooltip" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-									<li class="pinterest"><a href="#" data-toggle="tooltip" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
-									<li class="google-plus"><a href="#" data-toggle="tooltip" title="Google-plus"><i class="fa fa-google-plus"></i></a></li>
-									<li class="linkedin"><a href="#" data-toggle="tooltip" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-								</ul>
-							</div>
+							
 						</div>
 						<div class="authorbox">
 							<div class="authorbox-image">
@@ -62,49 +52,7 @@
 					{/foreach}
 
 					<div class="blog-details-comments-area">
-						<div class="commentlist">
-							<h6>3 COMMENTS</h6>
-
-							<div class="single-comment">
-								<div class="single-comment-thumb">
-									<img src="img/author-image/author-image-1.png" alt="hastech logo">
-								</div>
-								<div class="single-comment-content">
-									<div class="single-comment-content-top">
-										<h6><a href="blog-right-sidebar.html">ADMIN</a> – February 17, 2015</h6>
-										<a href="#" class="reply-button">Reply</a>
-									</div>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum.</p>
-								</div>
-							</div>
-
-							<div class="single-comment single-comment-reply">
-								<div class="single-comment-thumb">
-									<img src="img/author-image/author-image-2.png" alt="hastech logo">
-								</div>
-								<div class="single-comment-content">
-									<div class="single-comment-content-top">
-										<h6><a href="blog-right-sidebar.html">DEMO</a> – February 17, 2015</h6>
-										<a href="#" class="reply-button">Reply</a>
-									</div>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum.</p>
-								</div>
-							</div>
-
-							<div class="single-comment">
-								<div class="single-comment-thumb">
-									<img src="img/author-image/author-image-1.png" alt="hastech logo">
-								</div>
-								<div class="single-comment-content">
-									<div class="single-comment-content-top">
-										<h6><a href="blog-right-sidebar.html">ADMIN</a> – February 17, 2015</h6>
-										<a href="#" class="reply-button">Reply</a>
-									</div>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum.</p>
-								</div>
-							</div>
-
-						</div>
+						
 
 						<div class="commentbox mt-5">
 							<h6>LEAVE A REPLY</h6>
