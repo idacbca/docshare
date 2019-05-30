@@ -73,7 +73,6 @@ class Index extends Common
         'unitprice' => $_POST['unitprice'],
         'quantity' => $_POST['quantity'],
         'freight' => $_POST['freight'],
-        //'filepath' => $_POST['filepath'],
         'filepath' => implode(',', $_POST['filepath']),
     ]);
     //var_dump($goods);
