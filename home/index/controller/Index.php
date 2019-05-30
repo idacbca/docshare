@@ -70,8 +70,8 @@ class Index extends Common
         'unitprice' => $_POST['unitprice'],
         'quantity' => $_POST['quantity'],
         'freight' => $_POST['freight'],
-        'filepath' => $_POST['filepath'],
-        //'filepath' => implode(',', $_POST['imagepath']),
+        //'filepath' => $_POST['filepath'],
+        'filepath' => implode(',', $_POST['filepath']),
     ]);
     //var_dump($goods);
     $result = $goods->save();
@@ -84,7 +84,9 @@ class Index extends Common
 }
 
 public function download(){
-        $famlePath = input('filepath');
+        $fileid = input('filepath');
+        $file = db('goods_files');
+        $famlePath = $file->where('id', $fileid)->column('filepath');
         $file_dir = ROOT_PATH . 'public' . DS . 'uploads' . '/' . "$famlePath";    // 下载文件存放目录
         
         // 检查文件是否存在
