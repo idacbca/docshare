@@ -43,6 +43,7 @@ class Index extends Common
 
             $goods = db('goods');
             $data = $goods->where('id', input('id'))->select();
+            $id = $tpid->where('pid',input('id'))->column('id');
             $this->assign([
                 'details' => $data,
             ]);
