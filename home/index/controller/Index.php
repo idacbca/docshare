@@ -42,8 +42,11 @@ class Index extends Common
             //$type = $this->getCatgory();
 
             $goods = db('goods');
+            $data = $goods->where('id', input('id'))->select();
+            $id = $tpid->where('pid',input('id'))->column('id');
             $data = $goods->where('goodsid', input('id'))->select();
             //var_dump($data);
+
             $this->assign([
                 'details' => $data,
             ]);
