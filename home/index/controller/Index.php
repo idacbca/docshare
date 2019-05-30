@@ -8,15 +8,22 @@ class Index extends Common
 {
     public function index()
     {
-        
-        $total=Session::get('total'); 
+        if(input('id')){
+        $goods = db('goods');
+        $data = $goods->where('id', input('id'))->select();
         $this->assign([
-            'title' => 'DocShare',
-            'type' => $type,
-            'allgoods'=> $allgoods,
-            'total'=>$total
+            'title' => 'DocShare', 
+            'details' => $data 
         ]);
         return $this->fetch();
+    } else{
+        $goods = db('goods');
+        $data = $goods->select();
+            $this->assign([
+                'details' => $data,
+            ]);
+            return $this->fetch();
+      }
     }
 
     public function upload()
