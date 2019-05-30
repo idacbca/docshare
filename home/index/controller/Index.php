@@ -61,7 +61,7 @@ class Index extends Common
   }
   public function goods_add()
   {
-    $goods = db('goods');
+    $goods = model('goods');
     $goods->data([
         'goodsname' => $_POST['goodsname'],
         'goodtype' => $_POST['goodtype'],
@@ -70,10 +70,10 @@ class Index extends Common
         'unitprice' => $_POST['unitprice'],
         'quantity' => $_POST['quantity'],
         'freight' => $_POST['freight'],
-       // 'filepath' => $_POST['filepath'],
+        'filepath' => $_POST['filepath'],
         //'filepath' => implode(',', $_POST['imagepath']),
     ]);
-    var_dump($goods);
+    //var_dump($goods);
     $result = $goods->save();
     // $result = $db->insert($data);
     if($result){
@@ -106,5 +106,31 @@ public function download(){
             fclose($file1);
             exit();
         }
+}
+
+public function uploadfile(){
+    // 获取表单上传文件
+    $files = request()->file();
+    foreach($files as $file){
+        // 移动到框架应用根目录/public/uploads/ 目录下
+        $info = $file->rule('date')->move(ROOT_PATH . 'public' . DS . 'uploads');
+        $keyName = $file -> getInfo()['name'];
+        if($info){
+            $db=db('goods_files');
+            $filename =  DS . 'uploads'.'/'.$info->getSaveName();
+            $filename =str_replace('\\', '/', $filename);
+            //$data['id']=$keyName;
+            $data['filepath']=$filename;
+            $res=$db->insert($data);
+            $id = db('goods_files')->getLastInsID();
+            $filedata=['id'=>$id,'paths'=>$data['filepath']];
+
+            echo json_encode($filedata);
+
+        }else{
+            // 上传失败获取错误信息
+            echo $file->getError();
+        }
+    }
 }
 }
