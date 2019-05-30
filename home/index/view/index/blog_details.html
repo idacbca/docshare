@@ -19,21 +19,21 @@
             <!-- Blog Area -->
             <div class="blog-details-area bg-white section-padding-md">
 				<div class="container">
-
+					{foreach $details as $value}
 					<article class="blog-item blog-item-details">
 						<div class="blog-item-thumb">
-							<a href="blog-details.html">
+							<a href="blog_details.html">
 								<img src="img/blog/blog-lg-image-2.jpg" alt="blog image">
 							</a>
 						</div>
 						<div class="blog-item-content">
-							<h4 class="blog-item-title">PROIN FAUCIBUS MASSA VEL TRISTIQUE</h4>
-							<div class="blog-item-meta">POSTED BY <a href="blog.html">ADMIN</a> 05:12 AM MARCH 10, 2018 <a href="#">3 COMMENTS</a></div>
-							<p>Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean posuere libero eu augue condimentum rhoncus. Praesent ornare tortor ac ante egestas hendrerit. Aliquam et metus pharetra, bibendum massa nec, fermentum odio. Nunc id leo ultrices, mollis ligula in, finibus tortor. Mauris eu dui ut lectus fermentum eleifend. Pellentesque faucibus sem ante, non malesuada odio varius nec. Suspendisse potenti. Proin consectetur aliquam odio nec fringilla. Sed interdum at justo in efficitur. Vivamus gravida volutpat sodales. Fusce ornare sit amet ligula condimentum sagittis.</p>
+							<h4 class="blog-item-title">{$value.goodsname}</h4>
+							<div class="blog-item-meta">POSTED BY <a href="blog.html">abcdcc</a> 05:12 AM MARCH 10, 2018 <a href="#">3 COMMENTS</a></div>
+							<p>资料描述：{$value.goodsdetail}</p>
 							<blockquote>
 								Quisque semper nunc vitae erat pellentesque, ac placerat arcu consectetur. In venenatis elit ac ultrices convallis. Duis est nisi, tincidunt ac urna sed, cursus blandit lectus. In ullamcorper sit amet ligula ut eleifend. Proin dictum tempor ligula, ac feugiat metus. Sed finibus tortor eu scelerisque scelerisque.
 							</blockquote>
-							<p>Aenean et tempor eros, vitae sollicitudin velit. Etiam varius enim nec quam tempor, sed efficitur ex ultrices. Phasellus pretium est vel dui vestibulum condimentum. Aenean nec suscipit nibh. Phasellus nec lacus id arcu facilisis elementum. Curabitur lobortis, elit ut elementum congue, erat ex bibendum odio, nec iaculis lacus sem non lorem. Duis suscipit metus ante, sed convallis quam posuere quis. Ut tincidunt eleifend odio, ac fringilla mi vehicula nec. Nunc vitae lacus eget lectus imperdiet tempus sed in dui. Nam molestie magna at risus consectetur, placerat suscipit justo dignissim. Sed vitae fringilla enim, nec ullamcorper arcu.</p>
+							<p>*****</p>
 							<p>Suspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh. In dignissim vitae lorem non mollis. Praesent pretium tellus in tortor viverra condimentum. Nullam dignissim facilisis nisl, accumsan placerat justo ultricies vel. Vivamus finibus mi a neque pretium, ut convallis dui lacinia. Morbi a rutrum velit. Curabitur sagittis quam quis consectetur mattis. Aenean sit amet quam vel turpis interdum sagittis et eget neque. Nunc ante quam, luctus et neque a, interdum iaculis metus. Aliquam vel ante mattis, placerat orci id, vehicula quam. Suspendisse quis eros cursus, viverra urna sed, commodo mauris. Cras diam arcu, fringilla a sem condimentum, viverra facilisis nunc. Curabitur vitae orci id nulla maximus maximus. Nunc pulvinar sollicitudin molestie.</p>
 						</div>
 						<div class="blog-item-share">
@@ -58,6 +58,7 @@
 							</div>
 						</div>
 					</article>
+					{/foreach}
 
 					<div class="blog-details-comments-area">
 						<div class="commentlist">

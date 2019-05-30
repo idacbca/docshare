@@ -2,21 +2,19 @@
 namespace app\index\controller;
 
 use think\Controller;
+use think\Db;
 
 class Index extends Common
 {
     public function index()
     {
+        
+        $total=Session::get('total'); 
         $this->assign([
-            'title' => 'DocShare'
-        ]);
-        return $this->fetch();
-    }
-
-    public function blog_details()
-    {
-        $this->assign([
-            'title' => 'DocShare - 详情'
+            'title' => 'DocShare',
+            'type' => $type,
+            'allgoods'=> $allgoods,
+            'total'=>$total
         ]);
         return $this->fetch();
     }
@@ -30,8 +28,34 @@ class Index extends Common
         return $this->fetch();
     }
 
+<<<<<<< HEAD
     
 
     
     
+=======
+    public function blog_details()
+    {
+        if(input('id')){
+            //var_dump(input('id'));
+            //$type = $this->getCatgory();
+
+            $goods = db('goods');
+            $data = $goods->where('id', input('id'))->select();
+            $this->assign([
+                'details' => $data,
+            ]);
+            return $this->fetch();
+        } else{
+            $goods = db('goods');
+            //$idpath = $this->getGoodsPath();
+           // $img = $this->getimgPath();
+            $data = $goods->select();
+            $this->assign([
+                'details' => $data,
+            ]);
+            return $this->fetch();
+      }
+  }
+>>>>>>> 2814dabc15e97438c10e8ac165d7cc12177ef4f1
 }
