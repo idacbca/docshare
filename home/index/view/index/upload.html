@@ -3,16 +3,10 @@
 
 <head>
 	{include file="../public/static/home/head.html" title="$title" /}
+	<link href="/static/admin/lib/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-	<!--[if lte IE 9]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]-->
-
-	<!-- Add your site or application content here -->
-
-	<!-- Wrapper -->
 	<div id="wrapper" class="wrapper">
 		{include file="../public/static/home/header.html" /}
 
@@ -20,49 +14,109 @@
 		<main class="page-content">
 
             <!-- Contact Area -->
-            <div class="contact-us-area section-padding-md">
+      <div class="contact-us-area section-padding-md">
 
 				<!-- Contact Us Info -->
 				<div class="container">
-					<div class="">
+					
 						
-						<div class="">
+						<div class="page-container">
 							<div class="commentbox">
 								<h5>上传文件</h5>
-								<form id="contact-form" action="mail.php" method="POST" class="sn-form contact-form">
-									<div class="sn-form-inner">
-										<div class="single-input">
-											<label for="new-review-subject">标题</label>
-											<input type="text" name="title" id="title">
+								<div class="page-container">
+									<form action="{:url('upload')}" method="post" class="form form-horizontal" id="form-article-add" enctype="multipart/form-data">
+										<div class="row cl">
+											<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>商品名称：</label>
+											<div class="formControls col-xs-8 col-sm-9">
+												<input type="text" class="input-text" value="" placeholder="" id="goodsname" name="goodsname">
+											</div>
 										</div>
-										<div class="single-input">
-											<label for="new-review-name">简介</label>
-											<textarea id="brief" name="brief" cols="30" rows="2"></textarea>
+										<div class="row cl">
+											<label class="form-label col-xs-4 col-sm-2">商品类型：</label>
+											<div class="formControls col-xs-8 col-sm-9 skin-minimal">
+												<div class="radio-box">
+													<input type="radio" value="0" name="categoryid" checked>
+													<label for="radio-1">考研</label>
+												</div>
+												<div class="radio-box">
+													<input type="radio" value="1" name="categoryid">
+													<label for="radio-2">考试</label>
+												</div>
+												<div class="radio-box">
+													<input type="radio" value="2" name="categoryid">
+													<label for="radio-2">留学</label>
+												</div>
+												
+											</div>
 										</div>
-										<!-- <div class="single-input single-input-half">
-											<label for="new-review-email">Email*</label>
-											<input type="email" name="email" id="new-review-email">
-										</div> -->
-										<div class="single-input">
-											<label for="new-review-textbox">详情</label>
-											<script id="editor" type="text/plain" style="width:100%;height:400px;"></script> 
+										<div class="row cl">
+											<label class="form-label col-xs-4 col-sm-2">商品类型：</label>
+											<div class="formControls col-xs-8 col-sm-9 skin-minimal">
+												<div class="radio-box">
+													<input type="radio" value="0" name="goodtype" checked>
+													<label for="radio-1">1.实体</label>
+												</div>
+												<div class="radio-box">
+													<input type="radio" value="1" name="goodtype">
+													<label for="radio-2">2.电子</label>
+												</div>
+												
+											</div>
 										</div>
-										<div class="single-input">
-											<button class="sn-button sn-button-dark" type="submit"><span>上传</span></button>
+										
+										<div class="row cl">
+											<label class="form-label col-xs-4 col-sm-2">价格：</label>
+											<div class="formControls col-xs-8 col-sm-9">
+												<input type="text" name="unitprice" id="unitprice" placeholder="" value="" class="input-text" style="width:90%">
+											元</div>
 										</div>
-									</div>
-								</form>
-								<p class="form-message"></p>
+									
+										
+										<div class="row cl">
+											<label class="form-label col-xs-4 col-sm-2">数量：</label>
+											<div class="formControls col-xs-8 col-sm-9">
+												<input type="text" name="quantity" id="quantity" placeholder="" value="" class="input-text" style=>
+												</div>
+										</div>
+										<div class="row cl">
+											<label class="form-label col-xs-4 col-sm-2">运费：</label>
+											<div class="formControls col-xs-8 col-sm-9">
+												<input type="text" name="freight" id="freight" placeholder="" value="" class="input-text" style="width:90%">
+												元</div>
+										</div>
+										<div class="row cl">
+											<label class="form-label col-xs-4 col-sm-2">添加图片：</label>
+											<div id="imageimage" class="formControls col-xs-8 col-sm-9"> 
+											<input id="file-1" type="file" multiple class="file" data-overwrite-initial="false" data-min-file-count="2" data-theme="fas">
+											</div>
+											</div>
+										<div class="row cl">
+											 <label class="form-label col-xs-4 col-sm-2">详细内容：</label><!--
+											<div class="formControls col-xs-8 col-sm-9"> 
+												<script id="editor" type="text/plain" style="width:100%;height:400px;"></script> 
+											</div> -->
+											<div id="imageimage" class="formControls col-xs-8 col-sm-9"> 
+											<input type="file" name="file" /> <br> 
+										</div>
+										<div class="row cl">
+											<div class="col-xs-6 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+												<button class="btn btn-primary radius" type="submit">上传商品</button>
+												
+											</div>
+										</div>	
+										
+							
+									
+									
+									
+									</form>
+								</div>
 							</div>
-						</div>
-
-					</div>
+					  </div>
+					
 				</div>
-				<!--// Contact Us Info -->
-
-            </div>
             <!--// Contact Area -->
-
+			</div>
 		</main>
 		<!--// Page Conttent -->
 
@@ -83,6 +137,174 @@
 			var ue = UE.getEditor('editor');
 		});
 	</script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+        $("#test-upload").fileinput({
+            'showPreview' : false,
+            'allowedFileExtensions' : ['jpg', 'png','gif'],
+            'elErrorContainer': '#errorBlock'
+        });
+        /*
+         $("#test-upload").on('fileloaded', function(event, file, previewId, index) {
+         alert('i = ' + index + ', id = ' + previewId + ', file = ' + file.name);
+         });
+         */
+    });
+    var id=2;
+    //图片上传
+    initFileInput("file-1","{:URL('upload')}");
+    //初始化fileinput控件（第一次初始化）
+    function initFileInput(ctrlName,uploadUrl){
+        var control=$('#'+ctrlName);
+        control.fileinput({
+            language:'zh',//设置语言
+            uploadUrl:uploadUrl,//上传地址
+            allowedFileExtendsions:['jpg','png','gif','jpeg'],//接收的文件后缀
+            showUpload:true,//是否显示上传按钮
+            showCaption:true,//是否显示标题
+            showPreview:true,//是否显示预览图，默认true
+            showRemove:true,//是否显示删除/清空按钮，默认true。
+			showCancel:false,//
+            browseClass:"btn btn-primary",//按钮样式
+            previewFileIcon:"<i class='glyphicon glyphicon-king'></i>",
+            maxFileCount:10,//允许同时上传的最大文件数
+            dropZoneEnabled:true,//是否显示拖拽区域
+			layoutTemplates: {
+
+actionZoom: '',   //去除上传预览缩略图中的查看详情预览的缩略图标。
+
+},
+            initialPreviewConfig:{
+                caption:ctrlName,
+                width:'120px',
+                url:uploadUrl,
+                key:101,
+                success:function(){
+
+
+
+                }
+            }
+
+
+
+        });
+
+    }
+    //监听事件
+    $("#file-1").on("fileuploaded",function(event,data,previewId,index){
+        // var generateHideElement  = function (name, value) {
+        //         var tempInput = document.createElement("input");
+        //         tempInput.type = "hidden";
+        //         tempInput.name = "imagepath[]";
+        //         tempInput.value = "'+data.response['id']+'";
+        //         return tempInput;
+        //     }
+		// 	document.getElementById('form-article-add').appendChild(generateHideElement );
+		console.log(data.response['id']);
+		var div=$('<input type="hidden" name="imagepath[]" class="imagepath" value="'+data.response['id']+'"/>');
+		$('#imageimage').after(div);
+
+	
+		
+
+		});
+
+$(function(){
+	var ue = UE.getEditor('editor');
+});
+
+//日期选择控件
+function selecttime(flag){
+	if(flag == 1){
+		var endTime = $("#countTimeend").val();
+		if(endTime != ""){
+		WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',maxDate:endTime})}else {
+		WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})}
+	} else{
+		var startTime = $("#countTimestart").val();
+		if(startTime != ""){
+		WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',minDate:startTime})}else {
+		WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})}
+	}
+}
+	</script> 
+	<script type="text/javascript" src="/static/admin/lib/jquery.validation/1.14.0/jquery.validate.js"></script> 
+	<script type="text/javascript" src="/static/admin/lib/jquery.validation/1.14.0/validate-methods.js"></script> 
+	<script type="text/javascript" src="/static/admin/lib/jquery.validation/1.14.0/messages_zh.js"></script> 
+	<script type="text/javascript">
+			$(function(){
+					$('.skin-minimal input').iCheck({
+							checkboxClass: 'icheckbox-blue',
+							radioClass: 'iradio-blue',
+							increaseArea: '20%'
+					});
+					
+					$("#form-article-add").validate({
+							rules:{
+									goodsname:{
+											required:true,
+											//minlength:4,
+											maxlength:12
+									},
+									tid:{
+											required:true,
+									},
+									unit:{
+											required:true,
+											maxlength:2
+									},//unit最好改下
+									number:{
+											required:true,
+											minlength:1,
+											maxlength:6,
+											digits:true
+									},//还需要增加验证数据库里是否有重复的number
+									curprice:{
+											required:true,
+											rangelength:[1,8],
+											digits:true
+									},
+								 
+									cosprice:{
+											required:true,
+											digits:true,
+											rangelength:[1,8],
+									},
+									inventory:{
+											required:true,
+											rangelength:[1,4],
+											digits:true
+									},
+									freight:{
+											required:true,
+											rangelength:[1,2],
+											range:[0,50],
+											digits:true,
+									},
+							},
+							onkeyup:false,
+							focusCleanup:true,
+							success:"valid",
+							// submitHandler:function(form){
+							// 	$(form).ajaxSubmit({
+							// 		type: 'post',
+							// 		url: "xxxxxxx" ,
+							// 		success: function(data){
+							// 			layer.msg('添加成功!',{icon:1,time:1000});
+							// 		},
+				//               error: function(XmlHttpRequest, textStatus, errorThrown){
+							// 			layer.msg('error!',{icon:1,time:1000});
+							// 		}
+							// 	});
+							// 	var index = parent.layer.getFrameIndex(window.name);
+							// 	parent.$('.btn-refresh').click();
+							// 	parent.layer.close(index);
+							// }
+					});
+			});
+			</script> 
 </body>
 
 </html>

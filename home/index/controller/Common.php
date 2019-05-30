@@ -17,4 +17,9 @@ class Common extends Controller
         }
         
     }
+    public function getgoods(){
+        $goods = db('goods');
+        $data = $goods->select();
+        
+    }
 }
