@@ -22,6 +22,7 @@
                     <div class="blog-items-wrapper">
 
                         <!-- Blog Item -->
+                        {foreach $details as $value}
                         <article class="blog-item">
                             <div class="row">
                                 <div class="col-lg-5 col-12">
@@ -33,141 +34,24 @@
                                 </div>
                                 <div class="col-lg-7 col-12">
                                     <div class="blog-item-content">
-                                     {foreach $details as $value}
                                         <h4 class="blog-item-title"><a href="{:url('blog_details')}">{$value.goodsname}</a></h4>
                                         <div class="blog-item-meta"><i class="fa fa-clock-o"></i>25 JUN / POSTED BY <a href="blog.html">ADMIN</a></div>
                                         <p>资料描述：{$value.goodsdetail}</p>
+                                        <p>资料数量：{$value.quantity}</p>
                                         <a href="{:url('blog_details')}" class="sn-readmore">
                                             Read More
                                             <i class="fa fa-arrow-right"></i>
                                         </a>
-                                        {/foreach}
+                                        <p></p><div><button class="sn-readmore">下载</button></div></p>
+                                        <p>  </p>
                                     </div>
                                 </div>
                             </div>
                         </article>
+                        {/foreach}
                         <!--// Blog Item -->
 
-                        <!-- Blog Item -->
-                        <article class="blog-item">
-                            <div class="row">
-                                <div class="col-lg-5 col-12">
-                                    <div class="blog-item-thumb">
-                                        <a href="blog_details.html">
-                                            <img src="img/blog/blog-thumb-image-2.jpg" alt="blog image">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-7 col-12">
-                                    <div class="blog-item-content">
-                                        <h4 class="blog-item-title"><a href="blog_details.html">PROIN FAUCIBUS MASSA VEL TRISTIQUE</a></h4>
-                                        <div class="blog-item-meta"><i class="fa fa-clock-o"></i>25 JUN / POSTED BY <a href="blog.html">ADMIN</a></div>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur aliquet pulvinar libero ac scelerisque. Curabitur ut commodo elit, eu porttitor leo. Donec et pharetra lorem. Vestibulum vehicula dolor et metus fringilla elementum. Vestibulum aliquet magna maximus, hendrerit dui eu, euismod sem. Aenean nisi sem, aliquam vitae dapibus ut, interdum in</p>
-                                        <a href="blog_details.html" class="sn-readmore">
-                                            Read More
-                                            <i class="fa fa-arrow-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                        <!--// Blog Item -->
-
-                        <!-- Blog Item -->
-                        <article class="blog-item">
-                            <div class="row">
-                                <div class="col-lg-5 col-12">
-                                    <div class="blog-item-gallery slider-navigation-1">
-                                        <img src="img/blog/blog-thumb-image-4.jpg" alt="blog image">
-                                        <img src="img/blog/blog-thumb-image-3.jpg" alt="blog image">
-                                        <img src="img/blog/blog-thumb-image-1.jpg" alt="blog image">
-                                    </div>
-                                </div>
-                                <div class="col-lg-7 col-12">
-                                    <div class="blog-item-content">
-                                        <h4 class="blog-item-title"><a href="blog_details.html">PROIN FAUCIBUS MASSA VEL TRISTIQUE</a></h4>
-                                        <div class="blog-item-meta"><i class="fa fa-clock-o"></i>25 JUN / POSTED BY <a href="blog.html">ADMIN</a></div>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur aliquet pulvinar libero ac scelerisque. Curabitur ut commodo elit, eu porttitor leo. Donec et pharetra lorem. Vestibulum vehicula dolor et metus fringilla elementum. Vestibulum aliquet magna maximus, hendrerit dui eu, euismod sem. Aenean nisi sem, aliquam vitae dapibus ut, interdum in</p>
-                                        <a href="blog_details.html" class="sn-readmore">
-                                            Read More
-                                            <i class="fa fa-arrow-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                        <!--// Blog Item -->
-
-                        <!-- Blog Item -->
-                        <article class="blog-item">
-                            <div class="row">
-                                <div class="col-lg-5 col-12">
-                                    <div class="embed-responsive embed-responsive-16by9">
-                                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zGnpT8okBs0" allowfullscreen></iframe>
-                                    </div>
-                                </div>
-                                <div class="col-lg-7 col-12">
-                                    <div class="blog-item-content">
-                                        <h4 class="blog-item-title"><a href="blog_details.html">VIDEO POST BY ADMIN</a></h4>
-                                        <div class="blog-item-meta"><i class="fa fa-clock-o"></i>25 JUN / POSTED BY <a href="blog.html">ADMIN</a></div>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur aliquet pulvinar libero ac scelerisque. Curabitur ut commodo elit, eu porttitor leo. Donec et pharetra lorem. Vestibulum vehicula dolor et metus fringilla elementum. Vestibulum aliquet magna maximus, hendrerit dui eu, euismod sem. Aenean nisi sem, aliquam vitae dapibus ut, interdum in</p>
-                                        <a href="blog_details.html" class="sn-readmore">
-                                            Read More
-                                            <i class="fa fa-arrow-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                        <!--// Blog Item -->
-
-                        <!-- Blog Item -->
-                        <article class="blog-item">
-                            <div class="row">
-                                <div class="col-lg-5 col-12">
-                                    <div class="embed-responsive embed-responsive-16by9">
-                                        <iframe class="embed-responsive-item" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/348351981&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-                                    </div>
-                                </div>
-                                <div class="col-lg-7 col-12">
-                                    <div class="blog-item-content">
-                                        <h4 class="blog-item-title"><a href="blog_details.html">AUDIO POST BY ADMIN</a></h4>
-                                        <div class="blog-item-meta"><i class="fa fa-clock-o"></i>25 JUN / POSTED BY <a href="blog.html">ADMIN</a></div>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur aliquet pulvinar libero ac scelerisque. Curabitur ut commodo elit, eu porttitor leo. Donec et pharetra lorem. Vestibulum vehicula dolor et metus fringilla elementum. Vestibulum aliquet magna maximus, hendrerit dui eu, euismod sem. Aenean nisi sem, aliquam vitae dapibus ut, interdum in</p>
-                                        <a href="blog_details.html" class="sn-readmore">
-                                            Read More
-                                            <i class="fa fa-arrow-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                        <!--// Blog Item -->
-
-                        <!-- Blog Item -->
-                        <article class="blog-item">
-                            <div class="row">
-                                <div class="col-lg-5 col-12">
-                                    <div class="blog-item-thumb">
-                                        <a href="blog_details.html">
-                                            <img src="img/blog/blog-thumb-image-3.jpg" alt="blog image">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-7 col-12">
-                                    <div class="blog-item-content">
-                                        <h4 class="blog-item-title"><a href="blog_details.html">PROIN FAUCIBUS MASSA VEL TRISTIQUE</a></h4>
-                                        <div class="blog-item-meta"><i class="fa fa-clock-o"></i>25 JUN / POSTED BY <a href="blog.html">ADMIN</a></div>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur aliquet pulvinar libero ac scelerisque. Curabitur ut commodo elit, eu porttitor leo. Donec et pharetra lorem. Vestibulum vehicula dolor et metus fringilla elementum. Vestibulum aliquet magna maximus, hendrerit dui eu, euismod sem. Aenean nisi sem, aliquam vitae dapibus ut, interdum in</p>
-                                        <a href="blog_details.html" class="sn-readmore">
-                                            Read More
-                                            <i class="fa fa-arrow-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                        <!--// Blog Item -->
+                        
 
                     </div>
 
