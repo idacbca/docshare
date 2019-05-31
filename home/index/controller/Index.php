@@ -40,7 +40,7 @@ class Index extends Common
         if(input('id')){
             
             //$type = $this->getCatgory();
-
+            
             $goods = db('goods');
             $data = $goods->where('goodsid', input('id'))->select();
             //var_dump($data);
@@ -52,7 +52,7 @@ class Index extends Common
         } else{
             $goods = db('goods');
             //$idpath = $this->getGoodsPath();
-           // $img = $this->getimgPath();
+            $file = $this->getfilePath();
             $data = $goods->select();
             $this->assign([
                 'details' => $data,
@@ -88,7 +88,9 @@ public function download(){
         $fileid = input('filepath');
         $file = db('goods_files');
         $famlePath = $file->where('id', $fileid)->column('filepath');
-        $file_dir = ROOT_PATH . 'public' . DS . 'uploads' . '/' . "$famlePath";    // 下载文件存放目录
+        //var_dump($famlePath);
+        foreach($famlePath as $file){
+            $file_dir = ROOT_PATH . 'public' . DS .  "$file";    // 下载文件存放目录
         
         // 检查文件是否存在
         if (! file_exists($file_dir) ) {
@@ -109,6 +111,9 @@ public function download(){
             fclose($file1);
             exit();
         }
+
+        }
+        
 }
 
 public function uploadfile(){

@@ -34,20 +34,20 @@ class Common extends Controller
         //var_dump($arr);
         return $arr;
     }
-    public function getimgPath(){
+    public function getfilePath(){
         $n = db('goods');
-        //$m = db('goods_files');
-        $img = $n->where('id',input('id'))->value('filepath');
-        $img2 = explode(',',$img);
-        //var_dump($img2);
-        $imgpath = array();
-        foreach($img2 as $img3){
-            $imgpath2 = $m->where('id',$img3)->select();
+        $m = db('goods_files');
+        $file = $n->where('id',input('id'))->value('filepath');
+        $file2 = explode(',',$file);
+        var_dump($file2);
+        $filepath = array();
+        foreach($file2 as $file3){
+            $filepath2 = $m->where('id',$file3)->select();
             //var_dump($imgpath2);
-            array_push($imgpath,$imgpath2);
+            array_push($filepath,$filepath2);
         }
         
        //var_dump($imgpath);
-       return $imgpath;
+       return $filepath;
     }
 }
