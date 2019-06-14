@@ -1,0 +1,97 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+	{include file="../public/static/home/head.html" title="$title" /}
+</head>
+
+<body>
+	<!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+	<!-- Wrapper -->
+	<div id="wrapper" class="wrapper">
+		{include file="../public/static/home/header.html" /}
+
+		<!-- Page Conttent -->
+		<main class="page-content">
+
+            <!-- Blog Area -->
+            <div class="blog-details-area bg-white section-padding-md">
+				<div class="container">
+					{foreach $details as $value}
+					<article class="blog-item blog-item-details">
+						<!-- <div class="blog-item-thumb">
+						</div> -->
+						<div class="blog-item-content">
+							<h2 class="blog-item-title">{$value.goodsname}</h2>
+							<div class="blog-item-meta">POSTED BY <a href="blog.html">abcdcc</a> 05:12 AM MARCH 10, 2018 <a href="#">3 COMMENTS</a></div>
+							<a href="blog_details.html">
+									<img src="/static/home/img/banners/1.jpg" alt="blog image" height=400>
+								</a>
+							<h5>资料描述：{$value.goodsdetail}</h5>
+							<h5>资料数量：{$value.quantity}</h5>
+							<h5>资料价格：{$value.unitprice}</h5>
+							<p><div><button class="sn-readmore"><a href = "{:url('download',['filepath'=>$value.filepath])}">下载</a></button></div></p>
+							<p>***</p>
+							
+						</div>
+						<div class="authorbox">
+							<div class="authorbox-image">
+								<img src="img/author-image/author-image-1.png" alt="author image">
+							</div>
+							<div class="authorbox-content">
+								<h5>About the Author: <a href="blog-right-sidebar.html">Admin</a></h5>
+								<p>Praesent pretium tellus in tortor viverra condimentum condimentum. Nullam dignissim facilisis nisl, accumsan placerat justo ultricies vel</p>
+							</div>
+						</div>
+					</article>
+					{/foreach}
+
+					<div class="blog-details-comments-area">
+						
+
+						<div class="commentbox mt-5">
+							<h6>LEAVE A REPLY</h6>
+							<form action="#" class="sn-form">
+								<div class="sn-form-inner">
+									<div class="single-input">
+										<label for="new-review-textbox">Comment</label>
+										<textarea id="new-review-textbox" cols="30" rows="5"></textarea>
+									</div>
+									<div class="single-input single-input-half">
+										<label for="new-review-name">Name*</label>
+										<input type="text" id="new-review-name">
+									</div>
+									<div class="single-input single-input-half">
+										<label for="new-review-email">Email*</label>
+										<input type="email" id="new-review-email">
+									</div>
+									<div class="single-input">
+										<button class="sn-button sn-button-dark" type="submit"><span>Post Comment</span></button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+
+				</div>
+            </div>
+            <!--// Blog Area -->
+
+		</main>
+		<!--// Page Conttent -->
+
+		<!-- Footer Area -->
+		{include file="../public/static/home/footer.html" /}
+        <!--// Footer Area -->
+
+
+	</div>
+    <!--// Wrapper -->
+
+</body>
+
+
+<!-- source http://www.scnoob.com More templates http://www.scnoob.com/moban -->
+</html>

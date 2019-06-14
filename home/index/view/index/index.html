@@ -1,0 +1,84 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+	{include file="../public/static/home/head.html" title="$title" /}
+</head>
+
+<body>
+	<!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+	<!-- Wrapper -->
+	<div id="wrapper" class="wrapper">
+		{include file="../public/static/home/header.html" /}
+
+		<!-- Page Conttent -->
+		<main class="page-content">
+
+            <!-- Blog Area -->
+            <div class="blog-area bg-white section-padding-md">
+                <div class="container">
+                    <div class="blog-items-wrapper">
+
+                        <!-- Blog Item -->
+                        {foreach $details as $value}
+                        <article class="blog-item">
+                            <div class="row">
+                                <div class="col-lg-5 col-12">
+                                    <div class="blog-item-thumb">
+                                        <a href="{:url('blog_details',['id'=>$value.goodsid])}">
+                                            <img src="/static/home/img/banners/1.jpg" alt="blog image">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 col-12">
+                                    <div class="blog-item-content">
+                                        <h3 class="blog-item-title"><a href="{:url('blog_details',['id'=>$value.goodsid])}">{$value.goodsname}</a></h3>
+                                        <div class="blog-item-meta"><i class="fa fa-clock-o"></i>25 JUN / POSTED BY <a href="blog.html">ADMIN</a></div>
+                                        <p>资料描述：{$value.goodsdetail}</p>
+                                        <p>资料数量：{$value.quantity}</p>
+                                        <a href="{:url('blog_details',['id'=>$value.goodsid])}" class="sn-readmore">
+                                            文件详情
+                                            <i class="fa fa-arrow-right"></i>
+                                        </a>
+                                        <p></p><div><button class="sn-readmore"><a href = "{:url('download',['filepath'=>$value.filepath])}">下载</a></button></div></p>
+                                        <p>  </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        {/foreach}
+                        <!--// Blog Item -->
+
+                        
+
+                    </div>
+
+                    <div class="sn-pagination">
+                        <ul>
+                            <li><a href="blog.html">Prev</a></li>
+                            <li class="active"><a href="blog.html">1</a></li>
+                            <li><a href="blog.html">2</a></li>
+                            <li><a href="blog.html">3</a></li>
+                            <li><a href="blog.html">Next</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--// Blog Area -->
+
+		</main>
+		<!--// Page Conttent -->
+
+		<!-- Footer Area -->
+		{include file="../public/static/home/footer.html" /}
+        <!--// Footer Area -->
+
+
+	</div>
+    <!--// Wrapper -->
+ 
+</body>
+
+</html>
